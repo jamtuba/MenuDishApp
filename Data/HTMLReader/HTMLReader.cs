@@ -18,7 +18,7 @@ namespace MenuDishApp.Data.HTMLReader
 
             HtmlWeb web = new HtmlWeb();
 
-            HtmlDocument document = await web.LoadFromWebAsync("http://billundpizza.dk/menu/");
+            HtmlDocument document = await web.LoadFromWebAsync("http://billundpizza.dk/menu/a-la-carte/");
 
             HtmlNodeCollection targetNodes = document.DocumentNode.SelectNodes(targetStr);
 
