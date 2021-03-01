@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MenuDishApp.Models.Ingredients.Ingredients>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<script src="~/js/site.js" type="text/javascript"></script>
+
+<div class="text-center">
+    <h1 class="display-4">Velkommen</h1>
+</div>
+
+<div id="display"></div>
+
+<h2 class="text-center">Her har du mulighed for at til- eller fravælge ingredienser</h2>
+<br />
+<br />
+
+<form asp-controller="Home" asp-action="Result" method="get">
+    <div>
+        <ul class="list-unstyled row">
+            @foreach (var item in Model)
+            {
+                <li class="col-md-3 col-xs-6">
+                    <label>
+                        <input type="checkbox" name="checkbox" value="@item.Ingredient" /> @item.Ingredient
+                    </label>
+                </li>
+            }
+        </ul>
+        <div>
+            <label><input type="checkbox" name="checkbox" /> Tilvalg</label>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Sorter" />
+
+    </div>
+</form>
